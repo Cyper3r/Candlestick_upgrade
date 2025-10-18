@@ -25,6 +25,7 @@ Wick.Layer = class extends Wick.Base {
      * Called when creating a Wick Layer.
      * @param {boolean} locked - Is the layer locked?
      * @param {boolean} hideen - Is the layer hidden?
+     * @param {number} opacity - Opacity of the layer
      */
     constructor (args) {
         if(!args) args = {};
@@ -32,6 +33,7 @@ Wick.Layer = class extends Wick.Base {
 
         this.locked = args.locked === undefined ? false : args.locked;
         this.hidden = args.hidden === undefined ? false : args.hidden;
+        this.opacity = 1;
         this.name = args.name || null;
     }
 
