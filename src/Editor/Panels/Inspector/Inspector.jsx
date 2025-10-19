@@ -604,6 +604,22 @@ class Inspector extends Component {
   }
 
   /**
+  *Renders layer opacity slider
+  */
+  renderLayerOpacity = () => {
+    return (
+      <InspectorNumericSlider
+        tooltip="Layer Opacity"
+        val={this.getSelectionAttribute('opacity')}
+        onChange={(val) => this.setSelectionAttribute('opacity', val)}
+        divider={false}
+        inputProps={{min: 0, max: 1, step: 0.01}}
+        id="inspector-opacity"/>
+    )
+  }
+  
+
+  /**
    * Renders an inspector row allowing viewing and editing of all transformation properties
    * icluding position, scale, size, rotation and opacity.
    */
@@ -766,6 +782,7 @@ class Inspector extends Component {
     return  (
       <div className="inspector-content">
         {this.renderName()}
+        {this.renderLayerOpacity}
       </div>
     )
   }
